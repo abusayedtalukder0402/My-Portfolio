@@ -57,7 +57,7 @@ export default function Contact() {
               placeholder="Full name"
               required
               className="w-full p-3 rounded-md border-2 border-dotted  text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#BF092F]"
-            />
+            data-aos="fade-right"/>
           </div>
 
           <div>
@@ -68,7 +68,7 @@ export default function Contact() {
               placeholder="name@gmail.com"
               required
               className="w-full border-2 border-dotted  p-3 rounded-md  text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#BF092F]"
-            />
+            data-aos="fade-left"/>
           </div>
 
           <div>
@@ -78,7 +78,7 @@ export default function Contact() {
               name="phone"
               placeholder="+880 58XX XXXXX"
               className="w-full p-3 rounded-md border-2 border-dotted  text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#BF092F]"
-            />
+            data-aos="fade-right"/>
           </div>
 
           <div>
@@ -88,7 +88,7 @@ export default function Contact() {
               name="subject"
               placeholder="Let us know how we can help you"
               className="w-full p-3 rounded-md border-2 border-dotted  text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#BF092F]"
-            />
+            data-aos="fade-left"/>
           </div>
 
           <div>
@@ -98,13 +98,13 @@ export default function Contact() {
               rows="4"
               placeholder="Leave a comment..."
               className="w-full p-3 rounded-md border-2 border-dotted  text-gray-200 focus:outline-none focus:ring-2 focus:ring-[#BF092F]"
-            ></textarea>
+            data-aos="fade-right"></textarea>
           </div>
 
           <button
             type="submit"
             className="w-40  bg-black text-[#BF092F] hover:bg-[#BF092F] hover:text-white border-2 border-dotted  font-semibold py-3 rounded-md transition duration-300"
-          >
+          data-aos="fade-left">
             Send Message
           </button>
         </form>

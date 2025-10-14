@@ -21,7 +21,7 @@ const Skills = () => {
     tools: [
       { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
       { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-      { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { name: "GitHub",  icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
       { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
       { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
       { name: "NPM", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" },
@@ -37,14 +37,14 @@ const Skills = () => {
   else data = allSkills;
 
   return (
-    <section className="min-h-screen bg-[#0a0a0a] text-[#BF092F] py-16 px-6">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-8 text-left border-l-4 border-white pl-3">
+    <section className="min-h-screen bg-black text-[#BF092F] py-16 px-6">
+      <div className="max-w-5xl mx-auto text-center" >
+        <h2 className="text-3xl font-bold mb-8 text-left border-l-4 border-white pl-3"data-aos="fade-left">
           Skills
         </h2>
 
         {/* Tabs */}
-        <div className="flex justify-start gap-4 mb-10 flex-wrap">
+        <div className="flex justify-start gap-4 mb-10 flex-wrap"data-aos="fade-right">
           {["all", "tech", "tools"].map((tab) => (
             <button
               key={tab}
@@ -61,7 +61,7 @@ const Skills = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3  md:grid-cols-4 gap-6" data-aos="fade-up">
           {data.map((item, index) => (
             <div
               key={index}

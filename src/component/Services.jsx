@@ -4,45 +4,45 @@ export default function Services() {
   const services = [
     {
       icon: <FaCogs size={40} className="text-[#BF092F]" />,
-      title: "Awesome Features",
-      desc: "Aliquam commodo arcu vel ante volutpat tempus. Praesent pulvinar velit at posuere mollis. Quisque libero sapien."
+      title: "Frontend Web Development",
+      desc: "“I build modern, responsive, and interactive websites that look great on every device.”"
     },
     {
       icon: <FaStar size={40} className="text-[#BF092F]" />,
-      title: "Animated Elements",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus cursus lectus vel pellentesque."
+      title: "Portfolio Website Design",
+      desc: "“I design and develop personal portfolio websites that highlight skills, work, and creativity.”"
     },
     {
       icon: <FaLaptopCode size={40} className="text-[#BF092F]" />,
-      title: "Responsive Design",
-      desc: "Pellentesque ultrices ligula a libero porta, ut venenatis orci molestie. Vivamus vitae aliquet tellus, sed mollis libero."
+      title: "Landing Page Design",
+      desc: "“I create clean and conversion-focused landing pages for brands and startups.”."
     },
     {
       icon: <FaRocket size={40} className="text-[#BF092F]" />,
-      title: "Modern Design",
-      desc: "Duis ut ultricies nisi. Nulla risus odio, cursus convallis justo vitae purus malesuada, cursus convallis justo."
+      title: "UI/UX Design (with Tailwind & Figma concepts)",
+      desc: "“I design user-friendly interfaces that enhance the overall experience and usability.”"
     },
     {
       icon: <FaEye size={40} className="text-[#BF092F]" />,
-      title: "Retina Ready",
-      desc: "Vivamus quis tempor purus, a eleifend purus. Ut sodales vel tellus vel vulputate. Fusce rhoncus semper magna."
+      title: "Website Redesign / Optimization",
+      desc: "“I improve old or slow websites with modern design and optimized performance.”"
     },
     {
       icon: <FaCheckCircle size={40} className="text-[#BF092F]" />,
-      title: "Fast Support",
-      desc: "Suspendisse convallis sem eu ligula porta gravida. Suspendisse potenti. Lorem ipsum dolor sit amet."
+      title: "Creative Animations & Effects",
+      desc: "“I add smooth animations and micro-interactions to make websites come alive.”"
     }
   ];
 
   return (
-    <section className="py-16 bg-black text-[#BF092F]" id="services">
+    <section className="py-16 bg-black text-[#BF092F]" id="services" data-aos="fade-right">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8 text-left border-l-4 border-white pl-3">
           Services
         </h2>
          </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 "data-aos="fade-up">
         {services.map((service, index) => (
           <div
             key={index}

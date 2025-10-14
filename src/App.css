@@ -2,7 +2,9 @@
 @plugin "daisyui";
 
 
-
+body{
+    background-color: black;
+}
 
 .container .text{
     position: relative;
