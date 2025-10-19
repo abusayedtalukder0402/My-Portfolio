@@ -42,7 +42,7 @@ export default function Services() {
         </h2>
          </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 "data-aos="fade-up">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 "data-aos="fade-down">
         {services.map((service, index) => (
           <div
             key={index}

@@ -41,7 +41,8 @@ export default function Contact() {
       <div className="w-full max-w-2xl  p-8 rounded-2xl shadow-xl">
         <h2 className="text-4xl text-[#BF092F] font-bold text-center mb-8">
           Contact <span className="text-white">Me</span>
-          <div className="relative top-3 left-52 w-32  h-[4px] bg-white"></div>
+          <div className="relative top-3 mx-auto w-24 sm:w-28 md:w-32 lg:w-36 xl:w-40 h-[3px] md:h-[4px] bg-white"></div>
+
         </h2>
 
         <form

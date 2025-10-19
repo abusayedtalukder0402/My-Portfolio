@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <section className="bg-black text-gray-200 py-16 px-6 flex flex-col items-center ">
-      <div className="max-w-5xl w-full border-2 border-dotted text-[#BF092F] bg-[#1b1b1b] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 shadow-lg">
+      <div className="max-w-5xl w-full border-2 border-dotted text-[#BF092F] bg-[#1b1b1b] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 shadow-lg ">
         
         {/* Profile Image */}
         <div className="flex-shrink-0"data-aos="fade-left">

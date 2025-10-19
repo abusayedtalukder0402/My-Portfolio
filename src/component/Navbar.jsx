@@ -1,41 +1,109 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // ✅ Link ইমপোর্ট করো
+import { Home, User, Lightbulb, Wrench, Phone, Menu, X } from 'lucide-react';
 
-import { Link } from 'react-router'
+// মেনুর আইটেম ডেটা
+const navItems = [
+  { name: 'Home', icon: Home, link: '/' },
+  { name: 'About', icon: User, link: '/about' },
+  { name: 'Services', icon: Lightbulb, link: '/services' },
+  { name: 'Skills', icon: Wrench, link: '/skills' },
+  { name: 'Contact Us', icon: Phone, link: '/contact' },
+];
 
-function Navbar() {
+// ন্যাভিগেশন লিঙ্ক কম্পোনেন্ট
+const NavLink = ({ item, onClick }) => {
+  const IconComponent = item.icon;
   return (
-    <div className='' >
-      <div className="navbar bg-[#000000] shadow-sm fixed ">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-      </div>
-      <ul
-        tabIndex={0}
-        className=" menu menu-sm dropdown-content text-[#BF092F] bg-[#000000] rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/About">About</Link></li>
-       <li><Link to="/Skills">Skills</Link></li>
-        <li><Link to="/Services">Services</Link></li>
-        <li><Link to="/Contact">Contact</Link></li>
-      </ul>
-    </div>
-    <h1 className="btn btn-ghost text-xl text-[#BF092F] ml-100">ABU SAYED ( ) ;</h1>
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 text-[#BF092F] text-4">
-      <li className=' hover:border-b-1 '><Link to="/">HOME</Link></li>
-       <li  className=' hover:border-b-1 '><Link to="About">About</Link></li>
-       <li  className=' hover:border-b-1 '><Link to="/Services">Services</Link></li>
-       <li  className=' hover:border-b-1 '><Link to="Skills">Skills</Link></li>
-    </ul>
-  </div>
-  <div className="navbar-end">
-    <Link to="/Contact" className=" text-[#BF092F] text-2xl mr-100 font-bold">Contact</Link>
-  </div>
-</div>
-</div>
-  )
-}
+    <Link
+      to={item.link}
+      className="flex items-center p-3 md:p-2 text-[#BF092F] hover:bg-black md:hover:bg-transparent md:hover:text-white transition-colors duration-200"
+      onClick={onClick}
+    >
+      {/* শুধু মোবাইলে আইকন দেখা যাবে */}
+      <IconComponent className="w-5 h-5 mr-3 text-[#BF092F] md:hidden" />
+      {/* শুধু টেক্সট */}
+      <span className="text-base font-medium">{item.name}</span>
+    </Link>
+  );
+};
 
-export default Navbar
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleLinkClick = () => {
+    if (window.innerWidth < 768) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  return (
+    <header className="bg-black shadow-lg sticky top-0 z-50">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        {/* লোগো */}
+        <div className="flex-shrink-0">
+          <h1 className="text-2xl font-extrabold text-[#BF092F] cursor-pointer">
+            ABU SAYED ();
+          </h1>
+        </div>
+
+        {/* ডেস্কটপ মেনু */}
+        <div className="hidden md:flex md:items-center space-x-4">
+          {navItems.map((item) => (
+            <NavLink key={item.name} item={item} onClick={handleLinkClick} />
+          ))}
+        </div>
+
+        {/* মোবাইল টগল বাটন */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={toggleMenu}
+            className="text-[#BF092F] p-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-md"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </nav>
+
+      {/* মোবাইল সাইডবার */}
+      <div
+        className={`fixed top-0 left-0 w-64 h-full bg-black shadow-2xl transition-transform duration-300 ease-in-out transform md:hidden ${
+          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        } z-40`}
+      >
+        {/* সাইডবার হেডার */}
+        <div className="p-6 text-center border-b border-gray-700">
+          <img
+            src="/src/img/20251012_221615.png"
+            alt="ABU SAYED"
+            className="w-24 h-24 rounded-full mx-auto object-cover border-2 border-[#BF092F]"
+          />
+          <h2 className="mt-3 text-xl font-semibold text-white">ABU SAYED ();</h2>
+        </div>
+
+        {/* ন্যাভ লিঙ্ক */}
+        <nav className="mt-4">
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <NavLink item={item} onClick={handleLinkClick} />
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      {/* ব্যাকগ্রাউন্ড ওভারলে */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          onClick={toggleMenu}
+        ></div>
+      )}
+    </header>
+  );
+};
+
+export default Navbar;
